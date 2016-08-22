@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>栅格栏系统</title>
+    <link href="css/grid.css" rel="stylesheet">
+    <style>
+        .main{
+            width: 85%;
+            margin: auto;
+        }
+        .mbox{
+            border: 1px solid #999;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <article class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm-4 col-xs-6"><div class="mbox">col</div></div>
+                <div class="col col-sm-offset-4 col-sm-4 col-xs-offset-4 col-xs-2"><div class="mbox">col</div></div>
+            </div>
+            <div class="row">
+                <div class="col col-sm-3 col-xs-3"><div class="mbox">col</div></div>
+                <div class="col col-sm-6 col-xs-6">
+                    <div class="row">
+                        <div class="col col-sm-3 col-xs-3"><div class="mbox">col</div></div>
+                        <div class="col col-sm-3 col-xs-3"><div class="mbox">col</div></div>
+                        <div class="col col-sm-3 col-xs-3"><div class="mbox">col</div></div>
+                        <div class="col col-sm-3 col-xs-3"><div class="mbox">col</div></div>
+                    </div>
+                </div>
+                <div class="col col-sm-3 col-xs-3"><div class="mbox">col</div></div>
+            </div>
+            <div class="row">
+                <div class="col col-sm-1 col-sm-push-11 col-xs-2 col-xs-push-10"><div class="mbox">col</div></div>
+                <div class="col col-sm-1 col-sm-pull-1 col-xs-2 col-xs-pull-2"><div class="mbox">col</div></div>
+            </div>
+        </div>
+    </article>
+    <footer></footer>
+</body>
+</html>

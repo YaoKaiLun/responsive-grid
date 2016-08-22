@@ -1,0 +1,61 @@
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
+$grid-columns: 12;
+
+.clear-fix{
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+%border-box{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+%col-style{
+    @extend %border-box;
+    position: relative;
+    float: left;
+}
+@mixin make-grid($size){
+    @for $i from 1 to $grid-columns{
+        .col-#{$size}-#{$i}{
+            width: 100%/$grid-columns*$i;
+        }
+        .col-#{$size}-offset-#{$i}{
+            margin-left: 100%/$grid-columns*$i;
+        }
+        .col-#{$size}-pull-#{$i}{
+            right: 100%/$grid-columns*$i;
+        }
+        .col-#{$size}-push-#{$i}{
+            left: 100%/$grid-columns*$i;
+        }
+    }
+}
+.col{
+    @extend %col-style;
+}
+@include make-grid(xs)
+@media (min-width: $screen-sm-min) {
+    @include make-grid(sm);
+    @extend %col-style;
+}
+@media (min-width: $screen-md-min) {
+    @include make-grid(md);
+    @extend %col-style;
+}
+@media (min-width: $screen-lg-min) {
+    @include make-grid(lg);
+    @extend %col-style;
+}
+.container {
+    width: 100%;
+}
+.row{
+    width: 100%;
+    @extend .clear-fix;
+}
